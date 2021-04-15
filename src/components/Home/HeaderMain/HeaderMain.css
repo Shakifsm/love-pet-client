@@ -1,0 +1,31 @@
+.hero{
+    background-image: url("../../../images/headerbg.jpg");
+    height: 600px;
+    background-size: cover;
+    padding-left: 80px !important;
+    padding-top: 150px;
+    /* background-position: center; */
+}
+
+.hero-sub-title{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.hero-title{
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.appoinment-btn{
+    background-color: #F78264;
+    color: white;
+    padding: 15px 40px;
+    border: 1px solid #F78264;
+    border-radius: 50px;
+}
+
+.appoinment-btn:hover{
+    background-color: white;
+    color: #F78264;
+}

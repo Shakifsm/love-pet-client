@@ -1,9 +1,18 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import FeaturedService from '../FeaturedService/FeaturedService';
+import Header from '../Header/Header';
+import Services from '../Services/Services';
+import WhyUs from '../WhyUs/WhyUs';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is Home</h1>
+            <Header></Header>
+            <Services></Services>
+            <WhyUs></WhyUs>
+            <FeaturedService></FeaturedService>
+            <Footer></Footer>
         </div>
     );
 };

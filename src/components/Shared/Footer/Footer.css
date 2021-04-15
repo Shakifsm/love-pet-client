@@ -1,0 +1,68 @@
+.footer{
+    background-color: #262626;
+    color: #888888;
+    /* padding: 10px; */
+}
+
+.social-icons{
+    font-size: 25px;
+    margin-right: 10px;
+    color: white;
+}
+
+
+.working{
+    position: relative;
+}
+
+.hr{
+    width: 250px;
+    border: 1px solid #888888;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.footer-bottom{
+    background-color: #1C1C1C;
+    color: #888888;
+}
+
+.footer-bottom a {
+    margin-right: 10px;
+}
+
+.title{
+    color: white;
+}
+
+.subscribe-btn{
+    background-color: #262626;
+    border: 1px solid #F78264;
+    color: #F78264;
+    padding: 10px 80px;
+    border-radius: 50px;
+}
+
+.subscribe-btn:hover{
+    color: white;
+    background-color: #F78264;
+}
+
+.input{
+    border: none;
+    background-color: #262626;
+    outline: none;
+    color: #888888;
+}
+
+/* .subs{
+    position: relative;
+} */
+
+.input-hr{
+    width: 250px;
+    border: 1px solid #888888;
+    position: absolute;
+    margin-top: -10px;
+    margin-top: 5px;
+}
