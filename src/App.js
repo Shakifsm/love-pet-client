@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import { createContext } from 'react';
 import { useState } from 'react';
 import Login from './components/Login/Login';
+import AddService from './components/Dashboard/AddService/AddService';
 
 
 export const UserContext = createContext();
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Dashboard></Dashboard>
+            </Route>
+            <Route path="/AddService">
+              <AddService></AddService>
             </Route>
             <Route path="/appoinment">
               <Appoinment></Appoinment>
