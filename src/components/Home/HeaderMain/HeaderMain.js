@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const HeaderMain = () => {
     return (
         <section>
-            <div className="row w-100">
-                <div className="col-md-12 hero">
+            <div className="row w-100 hero">
+                <div className="col-md-12">
                     <h3 className="hero-sub-title">Grooming</h3>
                     <h1 className="hero-title">Pets Care</h1>
                     <p className="text-secondary">URGENT PET CARE IS CONVENIENTLY <br />LOCATED TO PROVIDE YOUR PET !</p>

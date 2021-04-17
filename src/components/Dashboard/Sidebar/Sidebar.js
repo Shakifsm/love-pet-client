@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGripHorizontal, faHome, faCalendar, faUsers, faFileAlt, faUserPlus, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faGripHorizontal, faHome, faCalendar, faUsers, faCommentAlt, faUserPlus, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import "./Sidebar.css"
 
 const Sidebar = () => {
     const [isDoctor, setIsDoctor] = useState(true);
     return (
-        <div className="sidebar d-flex flex-column justify-content-between col-md-2 p-5" style={{ height: "100vh"}}>
+        <div className="sidebar d-flex flex-column justify-content-between col-md-2 p-5" style={{ height: "100vh" }}>
             <ul className="list-unstyled">
                 <li>
                     <Link to="/dashboard" className="text-white">
@@ -22,8 +22,8 @@ const Sidebar = () => {
                 </li>
                 {isDoctor && <div>
                     <li>
-                        <Link to="/allPatients" className="text-white">
-                            <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
+                        <Link to="/addService" className="text-white" >
+                            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Service</span>
                         </Link>
                     </li>
                     <li>
@@ -32,13 +32,13 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/prescriptions" className="text-white">
-                            <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
+                        <Link to="/addReview" className="text-white">
+                            <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/addService" className="text-white" >
-                            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Service</span>
+                        <Link to="/allAppointmets" className="text-white">
+                            <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
                         </Link>
                     </li>
                     <li>
@@ -56,3 +56,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+

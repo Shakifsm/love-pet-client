@@ -29,7 +29,7 @@ const WhyUs = () => {
             <div className="text-center">
                 <h2><b><span style={{ color: '#F78264' }}>Why</span> Us?</b></h2>
             </div>
-            <div className="d-flex justify-content-center mt-5">
+            <div className="d-flex justify-content-center mt-5 mb-5 pt-3 pb-3">
                 <div className="row w-10 container-fluid">
                     {
                         whyUsData.map(whyUs => <WhyUsDetail whyUs={whyUs}></WhyUsDetail>)

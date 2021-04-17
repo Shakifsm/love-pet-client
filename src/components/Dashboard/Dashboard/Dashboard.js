@@ -5,6 +5,8 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../../../App';
 
 const containerStyle = {
     heigt: '100%',
@@ -12,6 +14,7 @@ const containerStyle = {
 }
 
 const Dashboard = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [appoinments, setAppoinments] = useState([])
     const handleDateChange = date => {
@@ -22,7 +25,7 @@ const Dashboard = () => {
         fetch('http://localhost:5000/appoinmentsByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ date : selectedDate})
+            body: JSON.stringify({ date : selectedDate, email : loggedInUser.email})
         })
             .then(res => res.json())
             .then(data => setAppoinments(data))
