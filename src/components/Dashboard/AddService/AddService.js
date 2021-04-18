@@ -34,7 +34,7 @@ const AddService = () => {
             email: data.email,
             imageURL: imageURL
         }
-        const url = 'http://localhost:5000/addAService'
+        const url = 'https://stormy-atoll-13470.herokuapp.com/addAService'
         fetch(url, {
             method: 'POST',
             headers: {

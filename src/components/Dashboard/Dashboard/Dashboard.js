@@ -22,7 +22,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/appoinmentsByDate', {
+        fetch('https://stormy-atoll-13470.herokuapp.com/appoinmentsByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ date : selectedDate, email : loggedInUser.email})
@@ -33,15 +33,16 @@ const Dashboard = () => {
     return (
         <section>
             <div style={containerStyle} className="row w-100">
-            <Sidebar></Sidebar>
-                
-                <div className="col-md-4 col-sm-12 col-12 p-5">
+                <div  className="col-md-2 col-sm-6 col-12">
+                    <Sidebar></Sidebar>
+                </div>
+                <div className="col-md-5 col-sm-12 col-12 p-5">
                     <Calendar
                         onChange={handleDateChange}
                         value={new Date()}
                     />
                 </div>
-                <div className="col-md-6 col-sm-12 col-12 p-5">
+                <div className="col-md-5 col-sm-12 col-12 p-5">
                     <AppoinmentsByDate appoinments={appoinments}></AppoinmentsByDate>
                 </div>
             </div>
