@@ -1,0 +1,14 @@
+.book-btn{
+    background-color: #F78264;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid #F78264;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.book-btn:hover{
+    background-color: white;
+    color: #F78264;
+}

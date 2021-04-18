@@ -7,7 +7,7 @@ const AppoinmentHeader = ({handleDateChange}) => {
     
     return (
         <main style={{ height: '600px', backgroundColor: '#EBF8E6' }} className="row w-100 d-flex align-items-center">
-            <div className="col-md-4 col-sm-6 col-12 offset-md-1">
+            <div className="col-md-4 col-sm-6 col-12 pl-5 offset-md-1 pb-5">
                 <h1 style={{ color: '#3A4256' }}>Appoinment</h1>
                 <Calendar
                     onChange={handleDateChange}

@@ -1,5 +1,6 @@
 import React from 'react';
 import AppoinmentForm from '../AppoinmentForm/AppoinmentForm';
+import "./BookingCard.css"
 
 const BookingCard = ({book, date}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -18,7 +19,8 @@ const BookingCard = ({book, date}) => {
                     <h5 className="card-title text-brand">{book.subject}</h5>
                     <h6>{book.visitingHour}</h6>
                     <p>{book.totalSpace} SPACES AVAILABLE</p>
-                    <button onClick={openModal} className="btn btn-danger text-uppercase">Book Appointment</button>
+                    <h4>{book.cost}</h4>
+                    <button onClick={openModal} className="book-btn text-uppercase">Book Appointment</button>
                     <AppoinmentForm date={date} appoinmentOn = {book.subject} modalIsOpen={modalIsOpen} closeModal={closeModal}></AppoinmentForm>
                 </div>
             </div>

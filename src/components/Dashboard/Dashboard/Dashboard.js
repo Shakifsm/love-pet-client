@@ -33,16 +33,15 @@ const Dashboard = () => {
     return (
         <section>
             <div style={containerStyle} className="row w-100">
-                <div  className="col-md-2 col-sm-6 col-12">
-                    <Sidebar></Sidebar>
-                </div>
-                <div className="col-md-5 col-sm-12 col-12 p-5">
+            <Sidebar></Sidebar>
+                
+                <div className="col-md-4 col-sm-12 col-12 p-5">
                     <Calendar
                         onChange={handleDateChange}
                         value={new Date()}
                     />
                 </div>
-                <div className="col-md-5 col-sm-12 col-12 p-5">
+                <div className="col-md-6 col-sm-12 col-12 p-5">
                     <AppoinmentsByDate appoinments={appoinments}></AppoinmentsByDate>
                 </div>
             </div>

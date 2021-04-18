@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
+import ProcessPayment from '../../ProcessPayment/ProcessPayment';
 
 const customStyles = {
     content: {
@@ -23,22 +24,23 @@ const AppoinmentForm = ({ modalIsOpen, closeModal, appoinmentOn, date }) => {
         data.service = appoinmentOn;
         data.date = date;
         date.created = new Date()
-        
-        fetch('http://localhost:5000/addAppoinment', {
-            method : 'POST',
-            headers : {'content-type' : 'application/json'},
-            body : JSON.stringify(data)
-        })
-        .then(res => res.json())
-        .then(success => {
-            if(success){
-                closeModal();
-                alert('appoinment created successfully')
-            }
-        })
 
-        
-        
+        fetch('http://localhost:5000/addAppoinment', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(success => {
+                if (success) {
+                    closeModal();
+                    alert('appoinment created successfully')
+                }
+            })
+        console.log(data, data.service);
+
+
+
     };
 
     return (
@@ -51,37 +53,45 @@ const AppoinmentForm = ({ modalIsOpen, closeModal, appoinmentOn, date }) => {
             >
                 <h2 className="text-center">{appoinmentOn}</h2>
                 <p className="text-secondary text-center"><small>On {date.toDateString()}</small></p>
-                <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
+                <div className="row w-100">
+                    <div className="col-md-8">
+                        <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
 
-                    <div className="form-group">
-                        <input className="form-control" name="name" placeholder="Your Name" {...register("name")} />
+                            <div className="form-group">
+                                <input className="form-control" name="name" placeholder="Your Name" {...register("name")} />
+                            </div>
+                            <div className="form-group">
+                                <input className="form-control" name="phone" placeholder="Phone Number" {...register("phone")} />
+                            </div>
+                            <div className="form-group">
+                                <input className="form-control" name="email" placeholder="Email" {...register("email")} />
+                            </div>
+                            <div className="form-group row">
+                                <div className="col-md-4">
+                                    <select className="form-control" name="pet" {...register("pet")}>
+                                        <option disabled={true} value="Not set">Select Pet</option>
+                                        <option value="Dog">Dog</option>
+                                        <option value="Cat">Cat</option>
+                                        <option value="Not set">Other</option>
+                                    </select>
+                                </div>
+                                <div className="col-md-4">
+                                    <input type="number" className="form-control" name="age" placeholder="Pet's Age" {...register("age")} />
+                                </div>
+                                <div className="col-md-4">
+                                    <input type="number" className="form-control" name="weight" placeholder=" Pet's Weight" {...register("weight")} />
+                                </div>
+                            </div>
+                            <div className="form-group text-right">
+                                <button type="submit" className="btn btn-success">Submit</button>
+                            </div>
+                        </form>
                     </div>
-                    <div className="form-group">
-                        <input className="form-control" name="phone" placeholder="Phone Number" {...register("phone")} />
+                    <div className="col-md-4 pt-5">
+                        <h6 className="pb-5">Select Your Payment Method</h6>
+                        <ProcessPayment></ProcessPayment>
                     </div>
-                    <div className="form-group">
-                        <input className="form-control" name="email" placeholder="Email" {...register("email")} />
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-md-4">
-                            <select className="form-control" name="pet" {...register("pet")}>
-                                <option disabled={true} value="Not set">Select Pet</option>
-                                <option value="Dog">Dog</option>
-                                <option value="Cat">Cat</option>
-                                <option value="Not set">Other</option>
-                            </select>
-                        </div>
-                        <div className="col-md-4">
-                            <input type="number" className="form-control" name="age" placeholder="Pet's Age" {...register("age")}/>
-                        </div>
-                        <div className="col-md-4">
-                            <input type="number" className="form-control" name="weight" placeholder=" Pet's Weight" {...register("weight")}/>
-                        </div>
-                    </div>
-                    <div className="form-group text-right">
-                        <button type="submit" className="btn btn-success">Submit</button>
-                    </div>
-                </form>
+                </div>
             </Modal>
         </div>
     );
