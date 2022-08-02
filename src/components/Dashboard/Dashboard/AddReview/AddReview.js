@@ -35,7 +35,7 @@ const AddReview = () => {
             review : data.review,
             imageURL: imageURL
         }
-        const url = 'https://stormy-atoll-13470.herokuapp.com/addAReview'
+        const url = 'https://powerful-hamlet-53653.herokuapp.com/addAReview'
         fetch(url, {
             method: 'POST',
             headers: {

@@ -22,7 +22,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        fetch('https://stormy-atoll-13470.herokuapp.com/appoinmentsByDate', {
+        fetch('https://powerful-hamlet-53653.herokuapp.com/appoinmentsByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ date : selectedDate, email : loggedInUser.email})
